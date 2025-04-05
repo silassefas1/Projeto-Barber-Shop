@@ -1,59 +1,154 @@
-# BarberShopUi
+# 💈 Projeto Barber Shop - Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+Este projeto é uma aplicação frontend desenvolvida em **Angular**, simulando o funcionamento de uma barbearia. Utiliza o **json-server** como backend mock para testes locais.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📦 Requisitos
+
+Antes de tudo, você precisa ter instalado:
+
+- [Node.js](https://nodejs.org/) (recomendado v16+)
+- [Angular CLI](https://angular.io/cli) (recomendado v15+)
+
+### 🔧 Instalação dos pacotes globais:
+
+```bash
+npm install -g @angular/cli
+npm install -g json-server
+```
+
+---
+
+## 📁 Clonando o projeto
+
+```bash
+git clone https://github.com/silassefas1/Projeto-Barber-Shop.git
+cd Projeto-Barber-Shop
+```
+
+---
+
+## 📥 Instalando as dependências do projeto
+
+```bash
+npm install
+```
+
+---
+
+## 🎨 Instalando o Bootstrap
+
+Se ainda não estiver instalado, rode:
+
+```bash
+npm install bootstrap
+```
+
+Depois, importe o CSS no arquivo `angular.json`:
+
+```json
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.css",
+  "src/styles.scss"
+]
+```
+
+---
+
+## 🌐 Configuração de ambiente
+
+Já está configurado para apontar para o json-server:
+
+```ts
+// src/environments/environment.ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000/'
+};
+```
+
+---
+
+## 🧪 Rodando o Mock Backend
+
+### 1. Crie o arquivo `db.json` na raiz do projeto com o seguinte conteúdo:
+
+```json
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "João Silva",
+      "email": "joao@email.com",
+      "phone": "11999999999"
+    },
+    {
+      "id": 2,
+      "name": "Maria Oliveira",
+      "email": "maria@email.com",
+      "phone": "11988888888"
+    }
+  ]
+}
+```
+
+### 2. Execute o json-server:
+
+```bash
+json-server --watch db.json --port 3000
+```
+
+> Mock API rodando em: `http://localhost:3000/clients`
+
+---
+
+## 🚀 Rodando o projeto Angular
+
+Abra outro terminal na raiz do projeto e execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse no navegador:  
+📍 `http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Estrutura de pastas relevante
 
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── pages/
+│   │   └── clients/
+│   │       └── components/
+│   ├── services/
+│   │   ├── api-client/
+│   │   │   └── clients/
+│   │   └── service.token.ts
+├── environments/
+│   └── environment.ts
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## ✅ Funcionalidades (mockadas)
 
-## Building
+- 📋 Listagem de clientes
+- ➕ Cadastro de cliente
+- ✏️ Edição e remoção
+- 📡 Integração com mock REST API (`json-server`)
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 💬 Dúvidas ou sugestões?
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Fique à vontade para abrir uma **Issue** ou enviar um **Pull Request** 😄
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🧑‍💻 Autor
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Desenvolvido por [Silas Sefas](https://github.com/silassefas1)

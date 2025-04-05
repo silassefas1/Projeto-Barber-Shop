@@ -1,4 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+mat-form-field {
+  display: block;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+
+html, body {
+  margin: 0 6px;
+}
+
+.col-12 {
+  width: 98%;
+}

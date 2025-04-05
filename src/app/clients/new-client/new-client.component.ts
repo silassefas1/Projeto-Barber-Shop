@@ -7,6 +7,7 @@ import { ClientModelForm } from '../client.models';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ISnackbarManagerService } from '../../services/isnackbar-manager.service';
+import { SnackbarManagerService } from '../../services/snackbar-manager.service';
 
 @Component({
   standalone: true,
@@ -16,13 +17,14 @@ import { ISnackbarManagerService } from '../../services/isnackbar-manager.servic
   styleUrl: './new-client.component.scss',
   providers: [
     { provide: SERVICES_TOKEN.HTTP.CLIENT, useClass: ClientsService },
-    { provide: SERVICES_TOKEN.SNACKBAR, useClass: ClientsService }
+    { provide: SERVICES_TOKEN.SNACKBAR, useClass: SnackbarManagerService}
   ],
 
 })
 export class NewClientComponent implements OnDestroy{
 
   private httpSubscription?: Subscription
+
 
   constructor(
     @Inject(SERVICES_TOKEN.HTTP.CLIENT) private readonly httpService: IClientService,

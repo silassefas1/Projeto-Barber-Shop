@@ -1,0 +1,34 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "nome": "João Silva",
+      "email": "joao@email.com",
+      "celular": "(11) 99999-9999"
+    },
+    {
+      "id": "2",
+      "nome": "Maria Souza",
+      "email": "maria@email.com",
+      "celular": "(21) 98888-8888"
+    },
+    {
+      "id": "3174",
+      "name": "aaa",
+      "email": "teste@teste.com",
+      "phone": "87456486748"
+    },
+    {
+      "id": "4c44",
+      "name": "Silas Sefas De Souza Aquino",
+      "email": "silassefas022@gmail.com",
+      "phone": "87996577528"
+    },
+    {
+      "id": "f067",
+      "name": "sdas asf asfas",
+      "email": "teste@teste.com",
+      "phone": "78878787878"
+    }
+  ]
+}
