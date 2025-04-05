@@ -1,80 +1,45 @@
-# 💈 Projeto Barber Shop - Frontend Angular
+💈 Projeto Barber Shop - Frontend Angular
 
-Este projeto é uma aplicação frontend desenvolvida em **Angular**, simulando o funcionamento de uma barbearia. Utiliza o **json-server** como backend mock para testes locais.
+Este projeto é uma aplicação frontend desenvolvida em Angular, simulando o funcionamento de uma barbearia. Utiliza o json-server como backend mock para testes locais.
 
----
-
-## 📦 Requisitos
+📦 Requisitos
 
 Antes de tudo, você precisa ter instalado:
+- Node.js (recomendado v16+)
+- Angular CLI (recomendado v15+)
 
-- [Node.js](https://nodejs.org/) (recomendado v16+)
-- [Angular CLI](https://angular.io/cli) (recomendado v15+)
-
-### 🔧 Instalação dos pacotes globais:
-
-```bash
+🔧 Instalação dos pacotes globais:
 npm install -g @angular/cli
 npm install -g json-server
-```
 
----
-
-## 📁 Clonando o projeto
-
-```bash
+📁 Clonando o projeto:
 git clone https://github.com/silassefas1/Projeto-Barber-Shop.git
 cd Projeto-Barber-Shop
-```
 
----
-
-## 📥 Instalando as dependências do projeto
-
-```bash
+📥 Instalando as dependências do projeto:
 npm install
-```
 
----
-
-## 🎨 Instalando o Bootstrap
-
-Se ainda não estiver instalado, rode:
-
-```bash
+🎨 Instalando o Bootstrap:
 npm install bootstrap
-```
 
-Depois, importe o CSS no arquivo `angular.json`:
-
-```json
+Depois, importe o CSS no arquivo angular.json:
 "styles": [
   "node_modules/bootstrap/dist/css/bootstrap.css",
   "src/styles.scss"
 ]
-```
 
----
-
-## 🌐 Configuração de ambiente
+🌐 Configuração de ambiente
 
 Já está configurado para apontar para o json-server:
-
-```ts
-// src/environments/environment.ts
+src/environments/environment.ts
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:3000/'
 };
-```
 
----
+🧪 Rodando o Mock Backend
 
-## 🧪 Rodando o Mock Backend
-
-### 1. Crie o arquivo `db.json` na raiz do projeto com o seguinte conteúdo:
-
-```json
+1. Crie o arquivo db.json na raiz do projeto com o seguinte conteúdo:
 {
   "clients": [
     {
@@ -91,64 +56,28 @@ export const environment = {
     }
   ]
 }
-```
 
-### 2. Execute o json-server:
-
-```bash
+2. Execute o json-server:
 json-server --watch db.json --port 3000
-```
 
-> Mock API rodando em: `http://localhost:3000/clients`
+Mock API rodando em: http://localhost:3000/clients
 
----
-
-## 🚀 Rodando o projeto Angular
+🚀 Rodando o projeto Angular
 
 Abra outro terminal na raiz do projeto e execute:
-
-```bash
 ng serve
-```
 
-Acesse no navegador:  
-📍 `http://localhost:4200`
+Acesse no navegador: http://localhost:4200
 
----
 
-## 🛠️ Estrutura de pastas relevante
+✅ Funcionalidades (mockadas)
+- Listagem de clientes
+- Cadastro de cliente
+- Edição e remoção
+- Integração com mock REST API (json-server)
 
-```
-src/
-├── app/
-│   ├── pages/
-│   │   └── clients/
-│   │       └── components/
-│   ├── services/
-│   │   ├── api-client/
-│   │   │   └── clients/
-│   │   └── service.token.ts
-├── environments/
-│   └── environment.ts
-```
+💬 Dúvidas ou sugestões?
+Fique à vontade para abrir uma Issue ou enviar um Pull Request 😄
 
----
-
-## ✅ Funcionalidades (mockadas)
-
-- 📋 Listagem de clientes
-- ➕ Cadastro de cliente
-- ✏️ Edição e remoção
-- 📡 Integração com mock REST API (`json-server`)
-
----
-
-## 💬 Dúvidas ou sugestões?
-
-Fique à vontade para abrir uma **Issue** ou enviar um **Pull Request** 😄
-
----
-
-## 🧑‍💻 Autor
-
-Desenvolvido por [Silas Sefas](https://github.com/silassefas1)
+🧑‍💻 Autor
+Desenvolvido por Silas Sefas (https://github.com/silassefas1)
