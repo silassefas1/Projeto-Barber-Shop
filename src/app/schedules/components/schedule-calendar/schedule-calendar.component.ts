@@ -79,7 +79,7 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
 
   set selected(selected: Date) {
     if (this._selected.getTime() !== selected.getTime()) {
-      this._selected = selected;
+      this._selected = selected; 
       this.onDateChange.emit(selected);
       this.buildTable();
     }
@@ -103,49 +103,24 @@ export class ScheduleCalendarComponent implements OnDestroy, AfterViewInit, OnCh
   }
 
   onSubmit(form: NgForm) {
-    if (!this.monthSchedule) {
-      console.error('Erro: monthSchedule ainda não foi carregado.');
-      return;
-    }
-
-    if (!this.newSchedule.startAt || !this.newSchedule.endAt || !this.newSchedule.clientId) {
-      console.error('Erro: campos obrigatórios ausentes.');
-      return;
-    }
-
-    const startAt = new Date(this._selected);
-    const endAt = new Date(this._selected);
-
-    startAt.setHours(this.newSchedule.startAt.getHours(), this.newSchedule.startAt.getMinutes());
-    endAt.setHours(this.newSchedule.endAt.getHours(), this.newSchedule.endAt.getMinutes());
-
-    const client = this.clients.find(c => c.id === this.newSchedule.clientId);
-    if (!client) {
-      console.error('Erro: cliente não encontrado.');
-      return;
-    }
-
+    const startAt = new Date(this._selected)
+    const endAt = new Date(this._selected)
+    startAt.setHours(this.newSchedule.startAt!.getHours(), this.newSchedule.startAt!.getMinutes())
+    endAt.setHours(this.newSchedule.endAt!.getHours(), this.newSchedule.endAt!.getMinutes())
     const saved: ClientScheduleAppointmentModel = {
       id: -1,
       day: this._selected.getDate(),
       startAt,
       endAt,
-      clientId: this.newSchedule.clientId,
-      clientName: client.name
-    };
-
-
-    this.monthSchedule.scheduledAppointments = this.monthSchedule.scheduledAppointments || [];
-    this.monthSchedule.scheduledAppointments.push(saved);
-
-
-    this.onScheduleClient.emit(saved);
-
-    this.buildTable();
-    form.resetForm();
-    this.newSchedule = { startAt: undefined, endAt: undefined, clientId: undefined };
+      clientId: this.newSchedule.clientId!,
+      clientName: this.clients.find(c => c.id === this.newSchedule.clientId!)!.name
+    }
+    this.monthSchedule.scheduledAppointments.push(saved)
+    this.onScheduleClient.emit(saved)
+    this.buildTable()
+    form.resetForm()
+    this.newSchedule = { startAt: undefined, endAt: undefined, clientId: undefined }
   }
-
 
   requestDelete(schedule: ClientScheduleAppointmentModel) {
     this.subscription = this.dialogManagerService.showYesNoDialog(
