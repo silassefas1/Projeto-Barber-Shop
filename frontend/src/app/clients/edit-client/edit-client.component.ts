@@ -57,7 +57,7 @@ export class EditClientComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    this.httpsubscriptions.forEach(s => s.unsubscribe())
+    this.httpsubscriptions.forEach(s => s.unsubscribe());
   }
 
   onSubmitClient(value: ClientModelForm){
@@ -65,7 +65,8 @@ export class EditClientComponent implements OnInit, OnDestroy {
     if(id){
       this.httpsubscriptions?.push (this.httpService.update(id, request).subscribe(_ => {
         this.snackBarManager.show('Usuario atualizado com sucesso'),
-        this.router.navigate(['clientes/list'])
+        this.router.navigate(['clients/list'])
+
       }))
       return
     }

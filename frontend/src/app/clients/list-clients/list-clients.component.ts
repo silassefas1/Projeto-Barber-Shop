@@ -40,8 +40,9 @@ export class ListClientsComponent implements OnInit, OnDestroy{
   }
 
   update(client: ClientModelTable){
-    this.router.navigate(['clients/edit-client'])
+    this.router.navigate(['clients/edit-client', client.id]);
   }
+  
 
   delete(client: ClientModelTable){
     this.httpSubscriptions.push(this.httpService.delete(client.id).subscribe(_ => this.snackBarManager.show(`O cliente ${client.name} foi excluido com sucesso`)))
