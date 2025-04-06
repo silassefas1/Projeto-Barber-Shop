@@ -149,7 +149,9 @@ Este projeto traz um usuário simbólico: **Fluxo**. Um nome que homenageia a id
 
 ## 📸 Screenshots
 
-(Adicione aqui imagens do sistema rodando: tela de clientes, agendamentos, formulários etc.)
+![Tela de Agendamentos](./frontend/photos/agendamentos.png)
+![Tela de Cadastro de Clientes](./frontend/photos/cadastro-de-clientes.png)
+![Tela de Listagem de Clientes](./frontend/photos/listagem-de-clientes.png)
 
 ---
 
