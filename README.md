@@ -123,6 +123,41 @@ API disponível em: [http://localhost:8080](http://localhost:8080)
 
 ---
 
+### 📦 Instalação e Execução
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/silassefas1/Projeto-Barber-Shop.git
+   cd Projeto-Barber-Shop/barber-shop-ui
+   ```
+
+2. Instale as dependências do frontend:
+   ```bash
+   npm install
+   ```
+
+3. Configure o banco de dados PostgreSQL:
+   - Acesse `backend/src/main/resources/application.properties`
+   - Altere as configurações de acesso:
+     ```properties
+     spring.datasource.url=jdbc:postgresql://localhost:5432/seu_banco
+     spring.datasource.username=seu_usuario
+     spring.datasource.password=sua_senha
+     ```
+
+### ▶️ Rodando Frontend + Backend juntos
+
+Você pode iniciar ambos com um único comando:
+```bash
+npm start
+```
+
+Esse comando usa `concurrently` para executar:
+- `ng serve` (frontend Angular)
+- `gradlew.bat bootRun` (backend Spring Boot)
+
+---
+
 ## 🧪 Testes
 
 - Teste endpoints com Postman ou via interface Angular
